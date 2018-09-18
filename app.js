@@ -119,6 +119,7 @@ let getSecondFromMs = (x)  => remainingAfterConvert(msToTotalSeconds(x), 60);
 let getMinuteFromMs = (x) =>remainingAfterConvert(msToTotalMinutes(x), 60);
 let getHourFromMs = (x) =>remainingAfterConvert(msToTotalHours(x),24);
 
+
 /*
 let getSecondFromMs   = num => 0;
 
@@ -129,6 +130,16 @@ let getSecondFromDays = num => 0;
 let getMinuteFromDays = num => 0;
 let getHourFromDays   = num => 0;
 */
+
+let convertToSmaller = (x, y) => x * y;
+let daysToTotalHours = x => convertToSmaller(x, 24);
+let daysToTotalMinutes = x => convertToSmaller(daysToTotalHours(x),60);
+let daysToTotalSeconds = x => convertToSmaller(daysToTotalMinutes(x),60);
+
+let remainingAfterConvert = (x, y) => Math.trunc(x%y);
+let getHourFromDays = x => remainingAfterConvert(daysToTotalHours(x), 24)
+let getMinuteFromDays = x => remainingAfterConvert(daysToTotalMinutes(x), 60)
+let getSecondFromDays = x => remainingAfterConvert(daysToTotalSeconds(x), 60)
 
 /* END REPLACEMENT FOR ASSIGNMENT 2 */
 
