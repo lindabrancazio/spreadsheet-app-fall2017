@@ -108,6 +108,18 @@ let mouseButtonPressed = (event, index) => {
  * @return {number} second for the displayed time (0 to 60)
  */
 
+
+let convertToLarger = (x, y) => Math.trunc(x/y);
+let msToTotalSeconds = (x) => convertToLarger(x, 1000);
+let msToTotalMinutes = (x) => convertToLarger(msToTotalSeconds(x),60);  
+let msToTotalHours = (x) => convertToLarger(msToTotalMinutes(x),60);
+
+let remainingAfterConvert = (x, y) => Math.trunc(x%y);
+let getSecondFromMs = (x)  => remainingAfterConvert(msToTotalSeconds(x), 60);
+let getMinuteFromMs = (x) =>remainingAfterConvert(msToTotalMinutes(x), 60);
+let getHourFromMs = (x) =>remainingAfterConvert(msToTotalHours(x),24);
+
+/*
 let getSecondFromMs   = num => 0;
 
 let getMinuteFromMs   = num => 0;
@@ -116,6 +128,7 @@ let getHourFromMs     = num => 0;
 let getSecondFromDays = num => 0;
 let getMinuteFromDays = num => 0;
 let getHourFromDays   = num => 0;
+*/
 
 /* END REPLACEMENT FOR ASSIGNMENT 2 */
 
