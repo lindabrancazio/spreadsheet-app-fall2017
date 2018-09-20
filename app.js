@@ -136,7 +136,7 @@ let daysToTotalHours = x => convertToSmaller(x, 24);
 let daysToTotalMinutes = x => convertToSmaller(daysToTotalHours(x),60);
 let daysToTotalSeconds = x => convertToSmaller(daysToTotalMinutes(x),60);
 
-let remainingAfterConvert = (x, y) => Math.trunc(x%y);
+//let remainingAfterConvert = (x, y) => Math.trunc(x%y);
 let getHourFromDays = x => remainingAfterConvert(daysToTotalHours(x), 24)
 let getMinuteFromDays = x => remainingAfterConvert(daysToTotalMinutes(x), 60)
 let getSecondFromDays = x => remainingAfterConvert(daysToTotalSeconds(x), 60)
